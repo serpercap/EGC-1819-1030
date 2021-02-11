@@ -1,0 +1,17 @@
+dist: xenial
+services:
+- postgresql
+addons:
+postgresql: '9.4'
+before_script:
+- psql -U postgres -c "create user serpercap1 password 'serpecap1'"
+- psql -U postgres -c "create database serpercapdb1 owner serpercap1"
+- psql -U postgres -c "ALTER USER serpercap1 CREATEDB"
+language: python
+python:
+- '3.6'
+install:
+- pip install -r requirements.txt
+script:
+- cd decide
+- python ./manage.py test store
