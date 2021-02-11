@@ -4,9 +4,9 @@ services:
 addons:
 postgresql: '9.4'
 before_script:
-- psql -U postgres -c "create user serpercap1 password 'serpecap1'"
-- psql -U postgres -c "create database serpercapdb1 owner serpercap1"
-- psql -U postgres -c "ALTER USER serpercap1 CREATEDB"
+- psql -U postgres -c "create user examenfebrero password 'examenfebrero'"
+- psql -U postgres -c "create database examenfebrerodb owner examenfebrero"
+- psql -U postgres -c "ALTER USER examenfebrero CREATEDB"
 language: python
 python:
 - '3.6'
