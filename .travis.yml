@@ -18,4 +18,8 @@ install:
 script:
 - cd decide
 - python ./manage.py test --keepdb
-#s
+deploy:
+  provider: heroku
+  app: fed12
+  strategy: git
+  api_key: $HEROKU_AUTH_TOKEN
